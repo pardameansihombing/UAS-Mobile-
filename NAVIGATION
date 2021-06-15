@@ -1,0 +1,114 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title : 'Routing Navigation',
+    initialRoute : '/',
+    routes : {
+      '/' : (context) => Menu(),
+      HalamanPertama.routeName : (context) => HalamanPertama(),
+      HalamanKedua.routeName : (context) => HalamanKedua(),
+      HalamanKetiga.routeName : (context) => HalamanKetiga(),
+
+    },
+  ));
+}
+
+class Menu extends StatelessWidget {
+  @override
+  Widget build (BuildContext context) {
+    return Scaffold(
+      appBar : AppBar(
+        title : Text ('Uas Pemrograman Mobile2 Pardamean Sihombing'),
+      ),
+      body : Center(
+        child : GridView.count(
+          crossAxisCount: 4,
+            children:<Widget>[RaisedButton(
+              child : Text ('Data Diri'),
+              onPressed: (){
+
+                Navigator.pushNamed(context, HalamanPertama.routeName);
+              },
+            ),
+            RaisedButton(
+              child : Text('Nama Lengkap'),
+              onPressed : (){
+
+                Navigator.pushNamed(context, HalamanKedua.routeName);
+              },
+            ),
+            RaisedButton(
+              child : Text('Alamat'),
+              onPressed : (){
+
+                Navigator.pushNamed(context, HalamanKetiga.routeName);
+              },
+            ),
+
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+class HalamanPertama extends StatelessWidget {
+  static const String routeName = "/halamanPertama";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      appBar : AppBar(
+        title : Text("Data Diri"),
+      ),
+      body: 
+            Text('Nama lengakap : Pardamean Sihombing'),
+            Text('Alamat       : Sibolga'),
+            Text('Kelas      : 6SIA10'),
+            Text('No Hp : 082167257233'), 
+
+          ]
+
+        ),
+
+    );
+  }
+}
+class HalamanKedua extends StatelessWidget {
+  static const String routeName = "/halamanKedua";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      appBar : AppBar(
+        title : Text(" Pendidikan "),
+      ),
+      body: Column(
+          children : <Widget>[
+            
+            Text('SD      : SD N 08 SIBOLGA'),
+            Text('SMP     : SMP NEGERI 7 SIBOLGA'),
+            Text('SMA     : SMA NEGERI 2 SIBOLGA'), 
+            Text('KULIAH  : STMIK TRIGUNA DHARMA MEDAN'),
+
+          ]
+
+        ),
+     );
+  }
+}
+class  HalamanKetiga extends StatelessWidget {
+  static const String routeName = "/halamanketiga";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar : AppBar(
+        title : Text("Quotes"),
+      ),
+      body: Center(
+        child:Text('Halaman Ketiga'),
+      ),
+    );
+  }
+}
