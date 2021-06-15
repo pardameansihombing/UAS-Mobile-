@@ -1,0 +1,22 @@
+Int main() {
+  print("Program Operator Aritmatika");
+  Int a = 5;
+  Int b = 8;
+  Int hasil;
+  // operator pengurangan
+  hasil = a - b;
+  print("$a - $b = $hasil");
+
+  // operator pembagian
+  hasil = a / b;
+  print("$a / $b = $hasil");
+
+  // operator penjumlahan
+  hasil = a + b;
+  print("$a + $b = $hasil");
+
+  // operator perkalian
+  hasil = a * b;
+  print("$a * $b = $hasil");
+
+}
